@@ -31,7 +31,7 @@ Each click is synthesized on the fly: a sine wave with a quick pitch drop and vo
 
 ```bash
 pip3 install pygame numpy tkmacosx
-python3 Metronom_3.py
+python3 Metronome.py
 ```
 
 ## Status
