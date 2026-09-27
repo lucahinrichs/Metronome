@@ -6,6 +6,8 @@ A simple, minimalist metronome built with Python, Tkinter, and pygame for real-t
 
 I've been playing bass and needed a metronome - so instead of grabbing an app, I built my own as a practice project while learning Python.
 
+https://github.com/user-attachments/assets/6524c087-0217-4095-9a56-d041276af3a3
+
 ## Features
 
 - Adjustable tempo (BPM), via slider or direct text input
