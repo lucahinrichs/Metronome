@@ -24,7 +24,7 @@ click_eins = make_click(880)
 click = make_click(660)
 click.set_volume(0.4)
 
-mybg = "#D75932"   #"#C5522E"
+mybg = "#D75932"
 mytext = "#FFFFFF"
 mainfont = ('Helvetica', 11)
 
@@ -37,11 +37,11 @@ root.configure(bg=mybg)
 laeuft = False
 zaehler = 0
 
-# BPM Logik
+# BPM logic
 v_bpm = tk.StringVar(value="120")
 
 def fokus_entfernen(event):
-    # Nur Fokus entfernen, wenn NICHT das Eingabefeld angeklickt wurde
+    # Only remove focus if the input field was NOT clicked
     if event.widget != e_bpm:
         root.focus_set()
 
@@ -92,7 +92,7 @@ def start_stop():
 
 def update_punkte(val=None):
     takt_anzahl = slider_takt.get()
-    # Zentrierte Time-Anzeige aktualisieren
+    # Update centered time signature display
     l_takt_anzeige.config(text='Time: ' + str(takt_anzahl) + '/4')
     
     erste_zeile = min(takt_anzahl, 4)
@@ -110,16 +110,16 @@ def update_punkte(val=None):
         else:
             punkte[i].place_forget()
 
-# GUI Elemente
+# GUI elements
 l_play = Button(root, text='▶', font=mainfont, bg=mybg, fg=mytext, 
                 borderless=1, width=80, command=start_stop)
 
 punkte = [tk.Label(root, text=str(i+1) if i > 0 else '①', font=('Helvetica', 40), bg=mybg, fg=mybg) for i in range(8)]
 
-# BPM Bereich
+# BPM area
 f_bpm = tk.Frame(root, bg=mybg)
 l_bpm_text = tk.Label(f_bpm, text="BPM: ", font=mainfont, bg=mybg, fg=mytext)
-# Eingabefeld mit grauem Hintergrund und schwarzer Schrift
+# Input field with gray background and black text
 e_bpm = tk.Entry(f_bpm, textvariable=v_bpm, font=mainfont, width=4, justify='center', fg='white', bg=mybg, borderwidth=0, highlightthickness=0)
 l_bpm_text.pack(side='left')
 e_bpm.pack(side='left')
@@ -130,7 +130,7 @@ slider_bpm = tk.Scale(root, from_=20, to=240, bg=mybg, fg=mytext, orient='horizo
 slider_bpm.set(120)
 slider_bpm.place(relx=0.5, rely=0.60, anchor='center', width=int(400*0.37))
 
-# Time Bereich (Zentriertes Label + Slider ohne eigenes Label)
+# Time signature area (centered label + slider without its own label)
 l_takt_anzeige = tk.Label(root, text='Time: 4/4', font=mainfont, bg=mybg, fg=mytext)
 l_takt_anzeige.place(relx=0.5, rely=0.68, anchor='center')
 
